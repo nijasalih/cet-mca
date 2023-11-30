@@ -97,7 +97,7 @@ void delete_at(){
         printf("\nLinked List is empty!\n");
     }
     else{
-        int pos,i=1;
+        int pos,i=2;
         struct Node *curr, *prev;
         
         printf("\nEnter the position of element to be deleted : ");

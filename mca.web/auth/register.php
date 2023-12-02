@@ -6,12 +6,13 @@
 <body>
     <center>
         <h3>Registration Form</h3><hr><br>
-        <form action="" method="post">
+        <form action="" method="post" > 
+            <!-- onsubmit="return formValidate()"> -->
             Name : <input type="text" name="name" required><br><br>
             Age : <input type="number" name="age"required><br><br>
             Email ID : <input type="email" name="email" required><br><br>
-            Enter Password : <input type="password" name="pass" required><br><br>
-            Confirm Password : <input type="password" name="cpass" required><br><br>
+            Enter Password : <input type="password" name="pass" id="pass" required><br><br>
+            Confirm Password : <input type="password" id="cpass" required><br><br>
             <input type="submit" value="Register">&nbsp;&nbsp;
             <input type="reset" value="Clear">
         </form><br><br>
@@ -55,4 +56,6 @@
         
     ?>
 </body>
+<script src="main.js"></script>
+
 </html>

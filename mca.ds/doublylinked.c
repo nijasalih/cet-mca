@@ -62,17 +62,35 @@ void insert_end(int data){
     printf("\n");
 }
 void insert_at(int data){
-    int pos,i=2;
-    printf("Enter the position to be inserted : ");
-    scanf("%d",&pos);
+    struct Node* new_node = create_node(data);
 
     if(head==NULL){
-        
+        head = tail = new_node;
+        new_node->next = new_node->prev = NULL;
     }
     else{
+        int pos,i=2;
+        printf("Enter the position to be inserted (From head): ");
+        scanf("%d",&pos);
+        
+        struct Node *temp =  head;
+
+        while(i<pos){
+            temp = temp->next;
+            i++;
+        }
+        new_node->next = temp->next;
+        new_node->prev = temp;
+        temp->next->prev = new_node;
+        temp->next = new_node;
+
+
+
 
     }
-
+    display_asc();
+    display_desc();
+    printf("\n");
 }
 
 void delete_end(){
@@ -102,6 +120,8 @@ int main(){
     insert_end(3);
     insert_end(4);
     insert_end(5);
+
+    
 
     delete_end();
     delete_end();

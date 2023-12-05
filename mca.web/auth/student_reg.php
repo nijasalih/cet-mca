@@ -62,17 +62,17 @@
                 $roll_no = $_POST["roll_no"];
                 $gender = $_POST["gender"];
                 $semester = $_POST["semester"];
-                echo $name."<br>".$ktu_id."<br>".$roll_no."<br>".$gender."<br>".$semester;
+                // echo $name."<br>".$ktu_id."<br>".$roll_no."<br>".$gender."<br>".$semester;
 
-                $con = mysqli_connect('localhost','student','root','');
+                $con = mysqli_connect('localhost','root','','student');
                 if($con){
-                    $sq = "INSERT INTO stude_reg VALUES('$name','$ktu_id',$roll_no,'$gender',$semester)";
+                    $sq = "INSERT INTO stud_reg VALUES('$name','$ktu_id',$roll_no,'$gender',$semester)";
                     $result = mysqli_query($con,$sq);
                     if($result){
                         echo"<script>
                         alert('Insertion Succesful!');
                         </script>";
-                        header('Location:home.php');
+                        header('Location:welcome.php');
                     }
                     else{
                         echo"<script>
@@ -80,9 +80,9 @@
                         </script>";
                     }
                 }
-            else{
-                echo "<script>alert(\"Please select the Semester!\");</script>";
-            }   
+                else{
+                    echo "<script>alert(\"Database Error occured\");</script>";
+                }        
     }
     ?>
 

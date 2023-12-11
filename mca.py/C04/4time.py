@@ -5,9 +5,10 @@ class Time:
         self.__seconds = s
     def __add__(self,other):
         t = Time()
-        s = self.__seconds + other.__seconds
-        m = self.__minutes + other.__minutes
+        
         h = self.__hours + other.__hours
+        m = self.__minutes + other.__minutes
+        s = self.__seconds + other.__seconds
 
         t.__seconds = s % 60
         carry = s // 60
@@ -16,13 +17,14 @@ class Time:
         t.__hours = (h + carry) % 24 
 
         return t
-    def print_time(self):
-        print(f"{self.__hours:02}:{self.__minutes:02}:{self.__seconds:02}")
+   
+    def __str__(self):
+        return f"{self.__hours:02}:{self.__minutes:02}:{self.__seconds:02}"
 
-t1 = Time(0,1000,0)
-t2 = Time()
+t1 = Time(0,30,0)
+t2 = Time(0,40,0)
 
 t3 = t1 + t2 
 
-t3.print_time()
+print(t3)
         

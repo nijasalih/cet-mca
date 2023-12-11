@@ -1,0 +1,1 @@
+Create a class publisher name to derive class book from publisher with attribute title and author. Derive Class Python from book with attribute price and number of pages.Write a programme that displays information about a python.
